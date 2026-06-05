@@ -1,21 +1,17 @@
-let display = document.getElementById("display");
-
-function appendNumber(num) {
-    display.value += num;
-}
-
-function appendOperator(op) {
-    display.value += op;
+function appendValue(value) {
+    document.getElementById("display").value += value;
 }
 
 function clearDisplay() {
-    display.value = "";
+    document.getElementById("display").value = "";
 }
 
 function calculate() {
+    let expression = document.getElementById("display").value;
+
     try {
-        display.value = eval(display.value);
-    } catch (error) {
-        display.value = "Error";
+        document.getElementById("display").value = eval(expression);
+    } catch {
+        document.getElementById("display").value = "Error";
     }
 }
